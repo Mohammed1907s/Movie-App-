@@ -25,7 +25,7 @@ class MainMoviesScreen extends StatelessWidget {
       child: Scaffold(
         backgroundColor: Colors.grey.shade900,
         body: SingleChildScrollView(
-          key: const Key('movieScrollView'),
+          // key: const Key('movieScrollView'),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [

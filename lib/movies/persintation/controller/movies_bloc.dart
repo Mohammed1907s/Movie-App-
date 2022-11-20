@@ -20,7 +20,7 @@ class MoviesBloc extends Bloc<MoviesEvent, MoviesState> {
 
   MoviesBloc(this.getNowPlayingMoviesUseCase, this.getPopularMoviesUseCase,
       this.getTopRatedMoviesUseCase)
-      : super(const MoviesState()) {
+      : super( MoviesState()) {
     on<GetNowPlayingEvent>(_getNowPlayingMovies);
 
     on<GetPopularMoviesEvent>(_getPopularMovies);

@@ -6,15 +6,15 @@ import 'package:clean_arch/movies/domain/entities/movie_details.dart';
 import 'package:clean_arch/movies/domain/entities/recommendation.dart';
 import 'package:clean_arch/movies/domain/usecase/get_movie_details_usecase.dart';
 import 'package:clean_arch/movies/domain/usecase/get_recommendation_use_case.dart';
+import 'package:clean_arch/movies/persintation/controller/movie_details_state.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 part 'movie_details_event.dart';
 
-part 'movie_details_state.dart';
 
 class MovieDetailsBloc extends Bloc<MovieDetailsEvent, MovieDetailsState> {
-  MovieDetailsBloc(this.getMovieDetailsUseCase,this.getRecommendationUseCase) : super(const MovieDetailsState()) {
+  MovieDetailsBloc(this.getMovieDetailsUseCase,this.getRecommendationUseCase) : super( MovieDetailsState()) {
     on<GetMovieDetailsEvent>(_getMovieDetails);
     on<GetMovieRecommendationEvent>(_getRecommendation);
   }
