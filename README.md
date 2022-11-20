@@ -1,6 +1,6 @@
-# clean_arch
+# Movie App
 
-A new Flutter project.
+Movie App with Flutter Clean Architecture I used Bloc State mangement and Dio
 
 ## Getting Started
 
