@@ -7,10 +7,11 @@ import 'package:clean_arch/movies/domain/usecase/get_now_playing_usecase.dart';
 import 'package:clean_arch/movies/domain/usecase/get_popular_movies_usecase.dart';
 import 'package:clean_arch/movies/domain/usecase/get_recommendation_use_case.dart';
 import 'package:clean_arch/movies/domain/usecase/get_top_rated_movies_usecse.dart';
+import 'package:clean_arch/movies/persintation/controller/movie_controller.dart';
 import 'package:clean_arch/movies/persintation/controller/movie_details_bloc.dart';
 import 'package:clean_arch/movies/persintation/controller/movies_bloc.dart';
 import 'package:get_it/get_it.dart';
-
+import 'package:get/get.dart';
 final sl = GetIt.instance;
 class ServicesLocator{
   void init(){

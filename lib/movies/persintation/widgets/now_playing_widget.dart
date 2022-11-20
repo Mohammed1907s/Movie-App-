@@ -1,25 +1,27 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:clean_arch/movies/persintation/controller/movie_controller.dart';
 import 'package:clean_arch/movies/persintation/controller/movies_bloc.dart';
 import 'package:clean_arch/movies/persintation/controller/movies_states.dart';
 import 'package:clean_arch/movies/persintation/screens/movie_detail_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:get/get.dart';
 
 import '../../../core/network/api_constant.dart';
 import '../../../core/utils/dummy.dart';
 import '../../../core/utils/enums.dart';
 
 class NowPlayingWidget extends StatelessWidget {
-  const NowPlayingWidget({Key? key}) : super(key: key);
-
+   NowPlayingWidget({Key? key}) : super(key: key);
+  // GetxMovie getxMovie = Get.find<GetxMovie>();
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<MoviesBloc, MoviesState>(
-      buildWhen: (previous, current) => previous.nowPlayingState != current.nowPlayingState,
-      builder: (context, state) {
-        switch (state.nowPlayingState) {
+    return GetBuilder<GetxMovie>(
+
+      builder: (getxMovie) {
+        switch (getxMovie.nowPlayingState) {
           case RequestState.loading:
             return const SizedBox(
                 height: 400,
@@ -33,7 +35,7 @@ class NowPlayingWidget extends StatelessWidget {
                   viewportFraction: 1.0,
                   onPageChanged: (index, reason) {},
                 ),
-                items: state.nowPlayingMovies.map(
+                items: getxMovie.nowPlayingMovies.map(
                   (item) {
                     return GestureDetector(
                       key: const Key('openMovieMinimalDetail'),
@@ -116,7 +118,7 @@ class NowPlayingWidget extends StatelessWidget {
             return SizedBox(
               height: 400,
                 child: Center(
-                  child: Text(state.nowPlayingMessage),
+                  child: Text(getxMovie.nowPlayingMessage),
                 ),
             );
         }

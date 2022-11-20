@@ -21,7 +21,7 @@ class MainMoviesScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => sl<MoviesBloc>()..add(GetNowPlayingEvent())..add(GetPopularMoviesEvent())..add(GetTopRatedMoviesEvent()),
+      create: (context) => sl<MoviesBloc>()..add(GetPopularMoviesEvent())..add(GetTopRatedMoviesEvent()),
       child: Scaffold(
         backgroundColor: Colors.grey.shade900,
         body: SingleChildScrollView(
@@ -29,7 +29,7 @@ class MainMoviesScreen extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const NowPlayingWidget(),
+               // NowPlayingWidget(),
               Container(
                 margin: const EdgeInsets.fromLTRB(16.0, 24.0, 16.0, 8.0),
                 child: Row(
